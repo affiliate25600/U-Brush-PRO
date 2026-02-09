@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto+Mono:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <title>Checking payment... | U Brush PRO</title>
+
+        <link rel="stylesheet" href="/styles/general.css">
+        <link rel="stylesheet" href="/styles/footer.css">
+        <link rel="stylesheet" href="/styles/success.css">
+    </head>
+    <body>
+        <main>
+            <div class="payment-status" id="payment-status">
+                <h1 id="status-text">Checking payment…</h1>
+                <p id="order-id" class="order-id"></p>
+                <svg class="status-incomplete" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--info)"><path d="M440-183v-274L200-596v274l240 139Zm80 0 240-139v-274L520-457v274Zm-80 92L160-252q-19-11-29.5-29T120-321v-318q0-22 10.5-40t29.5-29l280-161q19-11 40-11t40 11l280 161q19 11 29.5 29t10.5 40v318q0 22-10.5 40T800-252L520-91q-19 11-40 11t-40-11Zm200-528 77-44-237-137-78 45 238 136Zm-160 93 78-45-237-137-78 45 237 137Z"/></svg>
+                <svg class="status-complete" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--success)"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+                <a class="view-order" id="view-order" target="_blank" title="View order">
+                    View Order
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--bg-light)"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg>
+                </a>
+                <a class="homepage" href="/" title="Back to homepage">Home</a>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-links">
+                <a href="/" title="Home">Home</a>
+                <a href="/about" title="About">About</a>
+                <a href="/contact" title="Contact">Contact</a>
+                <a href="/track" title="Contact">Track package</a>
+                <a href="/U-Brush-PRO" title="Buy U Brush PRO">Buy</a>
+            </div>
+            <div class="footer-copyright">
+                <p>Built by <a href="https://16bitdevelopment.com" target="_blank">16 Bit Development</a></p>
+                <p>&copy; U Brush PRO <span id="date-year"></span></p>
+            </div>
+        </footer>
+
+        <script>
+            const yearEl = document.getElementById("date-year");
+            yearEl.innerHTML = new Date().getFullYear();
+        </script>
+
+        <script>
+            const sessionId = "<%= sessionId %>";
+
+            const paymentStatusEl = document.getElementById("payment-status");
+            const paymentStatusTextEl = document.getElementById("status-text");
+            const orderIdEl = document.getElementById("order-id");
+            const viewOrderEl = document.getElementById("view-order");
+
+            async function checkStatus() {
+                const res = await fetch(`/payment-status?session_id=${sessionId}`);
+                const data = await res.json();
+
+                if (data.paid) {
+                    document.title = "Payment successful! | U Brush PRO";
+
+                    paymentStatusEl.classList.add("complete");
+
+                    paymentStatusTextEl.textContent = "Payment successful!";
+
+                    orderIdEl.textContent = data.orderId;
+
+                    viewOrderEl.setAttribute("href", `/track/${data.orderId}`);
+                } else {
+                    setTimeout(checkStatus, 1000);
+                }
+            }
+
+            checkStatus();
+        </script>
+    </body>
+</html>

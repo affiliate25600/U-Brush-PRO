@@ -1,0 +1,391 @@
+body {
+    min-height: 200dvh;
+}
+
+.cursor {
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    height: 13em;
+    aspect-ratio: 1;
+
+    translate: -50% -50%;
+
+    background-image: linear-gradient(var(--secondary), var(--text));
+
+    border-radius: 9999px;
+
+    filter: blur(75px);
+
+    animation: cursor 20s linear infinite;
+}
+
+@keyframes cursor {
+    from {
+        rotate: 0deg;
+
+        scale: 1 1.5;
+    }
+
+    50% {
+        scale: 1.25 1;
+    }
+
+    to {
+        rotate: 360deg;
+
+        scale: 1 1.5;
+    }
+}
+
+header {
+    width: 100%;
+    height: 100dvh;
+
+    translate: 0 calc(-0.5dvh * var(--scroll));
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 3.25em;
+}
+
+header h1 {
+    font-size: 12em;
+
+    text-align: center;
+
+    background-image: linear-gradient(45deg, var(--primary), transparent 100%);
+    background-clip: text;
+    color: transparent;
+
+    filter: blur(calc(1px * (max(var(--scroll), 10) - 10) / 2));
+    scale: calc(1 / (var(--scroll) / 250 + 1));
+
+    font-family: "Archivo Black", sans-serif;
+
+    opacity: 0.5;
+
+    cursor: default;
+
+    transition: transform 1s, opacity 0.5s;
+}
+
+header h1:hover {
+    transform: scale(0.95);
+
+    opacity: 1;
+}
+
+header h1.big-heading {
+    font-size: 25em;
+}
+
+.three-canvas {
+    position: fixed;
+    top: calc(-1dvh * var(--scroll));
+
+    opacity: calc(1 - ((max(var(--scroll), 20) - 20) / 15));
+    filter: blur(calc(1px * (max(var(--scroll), 15) - 15) / 1));
+    scale: calc(var(--scroll) / 50 + 1);
+
+    animation: three 3s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+@keyframes three {
+    from {
+        translate: 0 0;
+    }
+
+    50% {
+        translate: 0 -1.5em;
+    }
+
+    to {
+        translate: 0 0;
+    }
+}
+
+.header-overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+
+    padding-bottom: 2em;
+
+    z-index: 100;
+
+    pointer-events: none;
+}
+
+.header-overlay .buy-button {
+    display: flex;
+    align-items: center;
+
+    padding: 0.25em 1em;
+
+    color: var(--secondary);
+
+    font-weight: 500;
+    font-size: 2em;
+
+    text-decoration: none;
+
+    border: 1px solid var(--secondary);
+
+    border-radius: 9999px;
+
+    pointer-events: all;
+
+    opacity: calc(1 - var(--scroll) / 15);
+
+    transition: color 0.25s, background-color 0.25s;
+}
+
+.header-overlay .buy-button:hover {
+    color: var(--bg-dark);
+
+    background-color: var(--secondary);
+}
+
+.header-overlay .buy-button svg {
+    height: 1em;
+    width: 1em;
+
+    margin-left: -1em;
+
+    opacity: 0;
+
+    transition: opacity 0.25s, margin 0.25s;
+}
+
+.header-overlay .buy-button:hover svg {
+    opacity: 1;
+    margin-left: 0.5em;
+}
+
+main {
+    anchor-name: --main-anc;
+
+    position: absolute;
+    top: 100dvh;
+    left: 50%;
+
+    translate: -50% 0;
+
+    width: calc(1% * (min(var(--scroll) / 100 * 40 + 60, 100)));
+
+    padding-top: 250px;
+
+    --side-padding: calc(1% * (min(var(--scroll) / 100 * 20, 20)));
+
+    background-color: var(--bg-glass);
+
+    border-radius: calc(250px * (1 - var(--scroll) / 100));
+
+    border-top: 2px solid var(--highlight-glass);
+    border-left: 1px solid var(--border-glass);
+    border-right: 1px solid var(--border-glass);
+    border-bottom: 2px solid var(--border-muted-glass);
+
+    backdrop-filter: blur(5px);
+
+    border-width: calc(1px - (max(var(--scroll), 75) - 75) / 10);
+
+    display: flex;
+    flex-direction: column;
+    gap: 8em;
+}
+
+main h2 {
+    margin-bottom: 1.5em;
+
+    padding-left: var(--side-padding);
+    padding-right: var(--side-padding);
+
+    color: var(--primary);
+
+    font-size: 4.5em;
+
+    font-family: "Archivo Black", sans-serif;
+
+    text-transform: uppercase;
+    text-align: center;
+
+    filter: blur(calc(10px - (max(var(--scroll) * 1dvh, 250px) - 250px) / 25));
+}
+
+main .para-section {
+    padding-left: var(--side-padding);
+    padding-right: var(--side-padding);
+    
+    margin-right: 25%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.25em;
+}
+
+main .para-section.right {
+    margin-right: 0;
+    margin-left: 25%;
+
+    text-align: right;
+}
+
+main .para-section h3 {
+    margin-bottom: 0.5em;
+
+    font-size: 3em;
+
+    translate: -2em 0;
+
+    transition: translate 2s;
+}
+
+main .para-section.right h3 {
+    translate: 2em 0;
+}
+
+main .para-section h3.show {
+    translate: 0 0;
+}
+
+main .para-section p,
+main .para-section li {
+    color: var(--text-muted);
+
+    font-size: 1.25em;
+
+    line-height: 1.5em;
+}
+
+main .para-section li {
+    margin-bottom: 0.5em;
+}
+
+main .buy-button {
+    position: relative;
+
+    margin: 0 auto;
+
+    width: 8em;
+    height: 3em;
+    max-width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--bg);
+
+    border-radius: 9999px;
+
+    color: var(--secondary);
+
+    font-size: 2em;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: all 0.25s;
+}
+
+main .buy-button::before {
+    content: "";
+
+    position: absolute;
+    inset: -0.1em;
+
+    background: conic-gradient(from var(--angle), var(--secondary) 0deg 120deg, transparent 120deg 160deg, var(--secondary) 160deg 360deg);
+
+    border-radius: 9999px;
+
+    z-index: -1;
+
+    animation: spin 5s infinite ease-in-out;
+}
+
+main .buy-button:hover {
+    width: 13em;
+    color: var(--bg);
+    background-color: var(--secondary);
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+    }
+}
+
+@media (max-width: 1000px) {
+    header,
+    main {
+        font-size: 0.85rem;
+    }
+
+    header {
+        padding-top: 5.25em;
+        padding-bottom: 2em;
+    }
+
+    main .para-section {
+        margin: 0 !important;
+    }
+}
+
+@media (max-width: 850px) {
+    header,
+    main {
+        font-size: 0.75rem;
+    }
+
+    header {
+        padding-top: 8.25em;
+        padding-bottom: 5em;
+    }
+}
+
+@media (max-width: 700px) {
+    header {
+        font-size: 0.5rem;
+
+        padding-top: 5.25em;
+        padding-bottom: 2em;
+    }
+
+    .three-canvas {
+        scale: 0.8;
+    }
+}
+
+@media (max-width: 475px) {
+    header {
+        font-size: 0.4rem;
+    }
+
+    .three-canvas {
+        scale: 0.8;
+    }
+}

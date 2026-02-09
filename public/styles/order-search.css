@@ -1,0 +1,118 @@
+main {
+    min-height: calc(100dvh - 10em);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3em;
+
+    padding: 3em;
+}
+
+main h1 {
+    font-size: 2.5em;
+
+    text-align: center;
+}
+
+main h1 label {
+    color: var(--primary);
+}
+
+main form {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+
+    padding: 1.5em;
+
+    background-image: linear-gradient(var(--bg-light), var(--bg));
+    box-shadow: inset 0 1px 2px var(--highlight), 0 -1px 2px var(--border);
+
+    border-radius: 2.5em;
+}
+
+main form .search-box {
+    width: 100%;
+
+    padding: 1em 1em;
+
+    font-size: 1em;
+
+    background-color: var(--border);
+
+    border: none;
+    border-radius: 9999px;
+
+    outline: none;
+}
+
+main form .search-btn {
+    padding: 0.5em 1.25em;
+
+    color: var(--secondary);
+
+    font-size: 1.25em;
+
+    background-color: transparent;
+
+    border: 1px solid var(--secondary);
+    border-radius: 9999px;
+
+    cursor: pointer;
+
+    transition: color 0.25s, background-color 0.25s;
+}
+
+main form .search-btn:hover {
+    color: var(--text);
+
+    background-color: var(--secondary);
+}
+
+main .error-msg {
+    color: var(--text-muted);
+
+    padding: 0.75em 2em;
+
+    background-color: var(--warning);
+
+    border-radius: 9999px;
+}
+
+main .error-msg svg {
+    display: block;
+}
+
+main .error-msg b {
+    color: var(--text);
+}
+
+@media (max-width: 700px) {
+    main form {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    main form .search-btn {
+        width: 100%;
+    }
+
+    footer {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 500px) {
+    main {
+        font-size: 0.85rem;
+    }
+
+    main .error-msg {
+        border-radius: 1.5em;
+    }
+
+    footer {
+        font-size: 0.6rem;
+    }
+}

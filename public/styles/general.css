@@ -1,0 +1,44 @@
+* {
+    --bg-dark: hsl(0 0 5%);
+    --bg: hsl(0 0 10%);
+    --bg-glass: hsla(0, 0%, 10%, 0.25);
+    --bg-light: hsl(0 0 15%);
+    --text: hsl(211 47% 95%);
+    --text-muted: hsl(211 7% 70%);
+    --highlight: hsl(211 5% 39%);
+    --border: hsl(211 6% 28%);
+    --border-muted: hsl(210 9% 18%);
+    --highlight-glass: hsla(210, 5%, 39%, 0.25);
+    --border-glass: hsla(211, 6%, 28%, 0.25);
+    --border-muted-glass: hsla(210, 9%, 18%, 0.25);
+    --primary: hsl(210 77% 71%);
+    --secondary: hsl(32 61% 63%);
+    --danger: hsl(9 26% 64%);
+    --warning: hsl(52 19% 57%);
+    --success: hsl(146 17% 59%);
+    --info: hsl(217 28% 65%);
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    color: var(--text);
+    font-family: "Roboto Mono", monospace;
+}
+
+:root {
+    color-scheme: dark;
+    
+    background-color: var(--bg-dark);
+
+    scrollbar-width: thin;
+}
+
+body {
+    padding-top: 3.5em;
+
+    min-height: 100dvh;
+
+    background-image: url(/images/bg-img.png);
+}

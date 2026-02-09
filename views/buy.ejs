@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto+Mono:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <title>Buy U Brush PRO | The Future Of Oral Care</title>
+
+        <link rel="stylesheet" href="/styles/general.css">
+        <link rel="stylesheet" href="/styles/nav.css">
+        <link rel="stylesheet" href="/styles/footer.css">
+        <link rel="stylesheet" href="/styles/buy.css">
+
+        <script src="/buy.js" defer></script>
+    </head>
+    <body>
+        <nav>
+            <a href="/track" title="Track order">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--text)"><path d="M240-160q-50 0-85-35t-35-85H40v-440q0-33 23.5-56.5T120-800h560v160h120l120 160v200h-80q0 50-35 85t-85 35q-50 0-85-35t-35-85H360q0 50-35 85t-85 35Zm0-80q17 0 28.5-11.5T280-280q0-17-11.5-28.5T240-320q-17 0-28.5 11.5T200-280q0 17 11.5 28.5T240-240ZM120-360h32q17-18 39-29t49-11q27 0 49 11t39 29h272v-360H120v360Zm600 120q17 0 28.5-11.5T760-280q0-17-11.5-28.5T720-320q-17 0-28.5 11.5T680-280q0 17 11.5 28.5T720-240Zm-40-200h170l-90-120h-80v120ZM360-540Z"/></svg>
+            </a>
+            <div class="links">
+                <a href="/" title="Home">
+                    <span>Home</span>
+                </a>
+                <a href="/U-Brush-PRO" title="Buy U Brush PRO">
+                    <span>Buy</span>
+                </a>
+                <a href="/about" title="About">
+                    <span>About</span>
+                </a>
+            </div>
+            <a href="/contact" title="Help">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--text)"><path d="M474.86-232q26.62 0 45.88-18.86T540-296.34q0-26.62-19.12-45.14T475.14-360q-26.62 0-45.88 18.38t-19.26 45Q410-270 429.12-251q19.12 19 45.74 19ZM423-391h104q0-30.39 7.5-51.2Q542-463 574-495q24-21 38.5-46.92t14.5-62.32q0-61.76-40.98-94.26-40.99-32.5-99.7-32.5Q421-731 379-694.5T321-607l96 36q5-19 20-40.5t44-21.5q19 0 29.5 12.25T521-595q0 15-10.5 31T489-539q-43 39-54.5 62.5T423-391Zm57 357q-92.64 0-174.47-34.6-81.82-34.61-142.07-94.86T68.6-305.53Q34-387.36 34-480q0-92.9 34.66-174.45 34.67-81.55 95.18-141.94 60.51-60.39 142.07-95Q387.48-926 480-926q92.89 0 174.48 34.59 81.59 34.6 141.96 94.97 60.37 60.37 94.97 141.99Q926-572.83 926-479.92q0 92.92-34.61 174.25-34.61 81.32-95 141.83Q736-103.33 654.45-68.66 572.9-34 480-34Zm-.23-136q130.74 0 220.49-89.51Q790-349.03 790-479.77t-89.51-220.49Q610.97-790 480.23-790t-220.49 89.51Q170-610.97 170-480.23t89.51 220.49Q349.03-170 479.77-170Zm.23-310Z"/></svg>
+            </a>
+        </nav>
+
+        <main id="main">
+            <div class="product-images-container">
+                <div class="product-images" id="product-images">
+                    <img src="/images/a.png" alt="Image 1">
+                    <img src="/images/b.png" alt="Image 2">
+                    <div class="product-images-interface">
+                        <button id="product-backwards" title="Last image">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--text-muted)"><path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/></svg>
+                        </button>
+                        <div class="image-number" id="image-number">
+                            <div class="image-number-dot"></div>
+                            <div class="image-number-dot"></div>
+                        </div>
+                        <button id="product-forwards" title="Next image">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--text-muted)"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-info">
+                <h3 class="product-title">U Brush PRO</h3>
+                <div class="product-price">
+                    <p>USD<span>$45</span><span class="new-price">$35</span></p>
+                </div>
+                <div class="product-delivery">
+                    <div class="green-dot"></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--text)"><path d="M240-160q-50 0-85-35t-35-85H40v-440q0-33 23.5-56.5T120-800h560v160h120l120 160v200h-80q0 50-35 85t-85 35q-50 0-85-35t-35-85H360q0 50-35 85t-85 35Zm0-80q17 0 28.5-11.5T280-280q0-17-11.5-28.5T240-320q-17 0-28.5 11.5T200-280q0 17 11.5 28.5T240-240ZM120-360h32q17-18 39-29t49-11q27 0 49 11t39 29h272v-360H120v360Zm600 120q17 0 28.5-11.5T760-280q0-17-11.5-28.5T720-320q-17 0-28.5 11.5T680-280q0 17 11.5 28.5T720-240Zm-40-200h170l-90-120h-80v120ZM360-540Z"/></svg>
+                    <p>Free Delivery</p>
+                </div>
+                <div class="product-description">
+                    <h4 id="stock-level"></h4>
+                    <p>With the hands-free and effortless brushing functionality, upgrade your oral health with the <b>U Brush PRO</b>.</p>
+                    <select name="quantity" id="product-quantity">
+                        <option value="1">Quantity: 1</option>
+                        <option value="2">Quantity: 2</option>
+                        <option value="3">Quantity: 3</option>
+                        <option value="4">Quantity: 4</option>
+                        <option value="5">Quantity: 5</option>
+                    </select>
+                </div>
+                <button id="buy-u-brush-pro" title="Create order for U Brush PRO">Buy Now</button>
+                <p class="product-error-msg" id="product-error-msg"></p>
+            </div>
+        </main>
+
+        <section id="delivery" style="display: none;">
+            <button id="back-main" title="Back to product page">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--secondary)"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg>
+                Back
+            </button>
+            <h3>Delivery Details</h3>
+            <div class="order-overview">
+                <div class="address-details">
+                    <div class="address-group">
+                        <label for="country">Country/Region</label>
+                        <select name="country" id="country">
+                            <option>--- SELECT ---</option>
+                            <option value="Afghanistan">Afghanistan</option>
+                            <option value="Albania">Albania</option>
+                            <option value="Algeria">Algeria</option>
+                            <option value="American Samoa">American Samoa</option>
+                            <option value="Angola">Angola</option>
+                            <option value="Anguilla">Anguilla</option>
+                            <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                            <option value="Argentina">Argentina</option>
+                            <option value="Armenia">Armenia</option>
+                            <option value="Aruba">Aruba</option>
+                            <option value="Austria">Austria</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Azerbaijan">Azerbaijan</option>
+                            <option value="Bahamas">Bahamas</option>
+                            <option value="Bahrain">Bahrain</option>
+                            <option value="Bangladesh">Bangladesh</option>
+                            <option value="Barbados">Barbados</option>
+                            <option value="Belarus">Belarus</option>
+                            <option value="Belgium">Belgium</option>
+                            <option value="Belize">Belize</option>
+                            <option value="Benin">Benin</option>
+                            <option value="Bermuda">Bermuda</option>
+                            <option value="Bhutan">Bhutan</option>
+                            <option value="Bolivia">Bolivia</option>
+                            <option value="Bonaire, Saint Eustatius and Saba (Netherlands Caribbean)">Bonaire, Saint Eustatius and Saba (Netherlands Caribbean)</option>
+                            <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                            <option value="Botswana">Botswana</option>
+                            <option value="Brazil">Brazil</option>
+                            <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+                            <option value="Brunei Darussalam">Brunei Darussalam</option>
+                            <option value="Bulgaria">Bulgaria</option>
+                            <option value="Burkina Faso">Burkina Faso</option>
+                            <option value="Burundi">Burundi</option>
+                            <option value="Cambodia">Cambodia</option>
+                            <option value="Cameroon">Cameroon</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Cabo Verde (formerly Cape Verde)">Cabo Verde (formerly Cape Verde)</option>
+                            <option value="Cayman Islands">Cayman Islands</option>
+                            <option value="Central African Republic">Central African Republic</option>
+                            <option value="Chad">Chad</option>
+                            <option value="Chile">Chile</option>
+                            <option value="China">China</option>
+                            <option value="Colombia">Colombia</option>
+                            <option value="Comoros">Comoros</option>
+                            <option value="Congo (Democratic Republic)">Congo (Democratic Republic)</option>
+                            <option value="Congo (Republic)">Congo (Republic)</option>
+                            <option value="Cook Islands">Cook Islands</option>
+                            <option value="Costa Rica">Costa Rica</option>
+                            <option value="Cote d'Ivoire">Cote d'Ivoire</option>
+                            <option value="Croatia">Croatia</option>
+                            <option value="Cuba">Cuba</option>
+                            <option value="Curaçao">Curaçao</option>
+                            <option value="Cyprus">Cyprus</option>
+                            <option value="Czechia (Czech Republic)">Czechia (Czech Republic)</option>
+                            <option value="Denmark">Denmark</option>
+                            <option value="Djibouti">Djibouti</option>
+                            <option value="Dominica">Dominica</option>
+                            <option value="Dominican Republic">Dominican Republic</option>
+                            <option value="Ecuador">Ecuador</option>
+                            <option value="Egypt">Egypt</option>
+                            <option value="El Salvador">El Salvador</option>
+                            <option value="Equatorial Guinea">Equatorial Guinea</option>
+                            <option value="Eritrea">Eritrea</option>
+                            <option value="Estonia">Estonia</option>
+                            <option value="Eswatini (formerly Swaziland)">Eswatini (formerly Swaziland)</option>
+                            <option value="Ethiopia">Ethiopia</option>
+                            <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+                            <option value="Faroe Islands">Faroe Islands</option>
+                            <option value="Fiji">Fiji</option>
+                            <option value="Finland">Finland</option>
+                            <option value="France">France</option>
+                            <option value="French Guiana (Guyana)">French Guiana (Guyana)</option>
+                            <option value="French Polynesia">French Polynesia</option>
+                            <option value="Gabon">Gabon</option>
+                            <option value="Gambia">Gambia</option>
+                            <option value="Georgia">Georgia</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Ghana">Ghana</option>
+                            <option value="Gibraltar">Gibraltar</option>
+                            <option value="Greece">Greece</option>
+                            <option value="Greenland">Greenland</option>
+                            <option value="Grenada">Grenada</option>
+                            <option value="Guadeloupe">Guadeloupe</option>
+                            <option value="Guam">Guam</option>
+                            <option value="Guatemala">Guatemala</option>
+                            <option value="Guinea">Guinea</option>
+                            <option value="Guinea-Bissau">Guinea-Bissau</option>
+                            <option value="Guyana">Guyana</option>
+                            <option value="Haiti">Haiti</option>
+                            <option value="Honduras">Honduras</option>
+                            <option value="Hong Kong">Hong Kong</option>
+                            <option value="Hungary">Hungary</option>
+                            <option value="Iceland">Iceland</option>
+                            <option value="India">India</option>
+                            <option value="Indonesia">Indonesia</option>
+                            <option value="Iran">Iran</option>
+                            <option value="Iraq">Iraq</option>
+                            <option value="Ireland">Ireland</option>
+                            <option value="Israel">Israel</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Jamaica">Jamaica</option>
+                            <option value="Japan">Japan</option>
+                            <option value="Jordan">Jordan</option>
+                            <option value="Kazakhstan">Kazakhstan</option>
+                            <option value="Kenya">Kenya</option>
+                            <option value="Kiribati">Kiribati</option>
+                            <option value="Kosovo">Kosovo</option>
+                            <option value="Kuwait">Kuwait</option>
+                            <option value="Kyrgyzstan">Kyrgyzstan</option>
+                            <option value="Laos">Laos</option>
+                            <option value="Latvia">Latvia</option>
+                            <option value="Lebanon">Lebanon</option>
+                            <option value="Lesotho">Lesotho</option>
+                            <option value="Liberia">Liberia</option>
+                            <option value="Liechtenstein">Liechtenstein</option>
+                            <option value="Lithuania">Lithuania</option>
+                            <option value="Luxembourg">Luxembourg</option>
+                            <option value="Macao">Macao</option>
+                            <option value="Madagascar">Madagascar</option>
+                            <option value="Malawi">Malawi</option>
+                            <option value="Malaysia">Malaysia</option>
+                            <option value="Maldives">Maldives</option>
+                            <option value="Mali">Mali</option>
+                            <option value="Malta">Malta</option>
+                            <option value="Marshall Islands">Marshall Islands</option>
+                            <option value="Martinique">Martinique</option>
+                            <option value="Mauritania">Mauritania</option>
+                            <option value="Mauritius">Mauritius</option>
+                            <option value="Mexico">Mexico</option>
+                            <option value="Micronesia">Micronesia</option>
+                            <option value="Moldova">Moldova</option>
+                            <option value="Mongolia">Mongolia</option>
+                            <option value="Montenegro">Montenegro</option>
+                            <option value="Montserrat">Montserrat</option>
+                            <option value="Morocco">Morocco</option>
+                            <option value="Mozambique">Mozambique</option>
+                            <option value="Myanmar (Burma)">Myanmar (Burma)</option>
+                            <option value="Namibia">Namibia</option>
+                            <option value="Nauru">Nauru</option>
+                            <option value="Nepal">Nepal</option>
+                            <option value="Netherlands">Netherlands</option>
+                            <option value="New Caledonia">New Caledonia</option>
+                            <option value="New Zealand">New Zealand</option>
+                            <option value="Nicaragua">Nicaragua</option>
+                            <option value="Niger">Niger</option>
+                            <option value="Nigeria">Nigeria</option>
+                            <option value="Niue">Niue</option>
+                            <option value="North Korea">North Korea</option>
+                            <option value="North Macedonia (formerly Macedonia)">North Macedonia (formerly Macedonia)</option>
+                            <option value="North Mariana Islands">North Mariana Islands</option>
+                            <option value="Norway">Norway</option>
+                            <option value="Oman">Oman</option>
+                            <option value="Pakistan">Pakistan</option>
+                            <option value="Palau">Palau</option>
+                            <option value="Panama">Panama</option>
+                            <option value="Papua New Guinea">Papua New Guinea</option>
+                            <option value="Paraguay">Paraguay</option>
+                            <option value="Peru">Peru</option>
+                            <option value="Philippines">Philippines</option>
+                            <option value="Pitcairn Island">Pitcairn Island</option>
+                            <option value="Poland">Poland</option>
+                            <option value="Portugal">Portugal</option>
+                            <option value="Puerto Rico">Puerto Rico</option>
+                            <option value="Qatar">Qatar</option>
+                            <option value="Reunion">Reunion</option>
+                            <option value="Romania">Romania</option>
+                            <option value="Russia">Russia</option>
+                            <option value="Rwanda">Rwanda</option>
+                            <option value="Saint Helena, Ascension and Tristan da Cunha">Saint Helena, Ascension and Tristan da Cunha</option>
+                            <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                            <option value="Saint Martin (French Part)">Saint Martin (French Part)</option>
+                            <option value="Saint Lucia">Saint Lucia</option>
+                            <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+                            <option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+                            <option value="Samoa">Samoa</option>
+                            <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                            <option value="Saudi Arabia">Saudi Arabia</option>
+                            <option value="Senegal">Senegal</option>
+                            <option value="Serbia">Serbia</option>
+                            <option value="Seychelles">Seychelles</option>
+                            <option value="Sierra Leone">Sierra Leone</option>
+                            <option value="Singapore">Singapore</option>
+                            <option value="Slovak Republic (Slovakia)">Slovak Republic (Slovakia)</option>
+                            <option value="Slovenia">Slovenia</option>
+                            <option value="Soloman Islands">Soloman Islands</option>
+                            <option value="Somalia">Somalia</option>
+                            <option value="South Africa">South Africa</option>
+                            <option value="South Korea">South Korea</option>
+                            <option value="Spain">Spain</option>
+                            <option value="Sri Lanka">Sri Lanka</option>
+                            <option value="Sudan">Sudan</option>
+                            <option value="Suriname">Suriname</option>
+                            <option value="Sweden">Sweden</option>
+                            <option value="Switzerland">Switzerland</option>
+                            <option value="Syrian Arab Republic">Syrian Arab Republic</option>
+                            <option value="Taiwan">Taiwan</option>
+                            <option value="Tajikistan">Tajikistan</option>
+                            <option value="Tanzania">Tanzania</option>
+                            <option value="Thailand">Thailand</option>
+                            <option value="Timor Leste">Timor Leste</option>
+                            <option value="Togo">Togo</option>
+                            <option value="Tokelau">Tokelau</option>
+                            <option value="Tonga">Tonga</option>
+                            <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                            <option value="Tunisia">Tunisia</option>
+                            <option value="Turkiye (formerly Turkey)">Turkiye (formerly Turkey)</option>
+                            <option value="Turkmenistan">Turkmenistan</option>
+                            <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+                            <option value="Tuvalu">Tuvalu</option>
+                            <option value="Uganda">Uganda</option>
+                            <option value="Ukraine">Ukraine</option>
+                            <option value="United Arab Emirates">United Arab Emirates</option>
+                            <option value="United Kingdom (including Northern Ireland)">United Kingdom (including Northern Ireland)</option>
+                            <option value="United States">United States</option>
+                            <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+                            <option value="Uruguay">Uruguay</option>
+                            <option value="Uzbekistan">Uzbekistan</option>
+                            <option value="Vanuatu">Vanuatu</option>
+                            <option value="Virgin Islands (British)">Virgin Islands (British)</option>
+                            <option value="Virgin Islands (US)">Virgin Islands (US)</option>
+                            <option value="Vatican City">Vatican City</option>
+                            <option value="Venezuela">Venezuela</option>
+                            <option value="Vietnam">Vietnam</option>
+                            <option value="Wallis and Futuna">Wallis and Futuna</option>
+                            <option value="Yemen">Yemen</option>
+                            <option value="Zambia">Zambia</option>
+                            <option value="Zimbabwe">Zimbabwe</option>
+                        </select>
+                    </div>
+                    <div class="address-group">
+                        <label for="name">Full name (First name and surname)</label>
+                        <input type="text" id="name" placeholder="Name">
+                    </div>
+                    <div class="address-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="Email">
+                    </div>
+                    <div class="address-group-row">
+                        <div class="address-group">
+                            <label for="address">Address</label>
+                            <input type="text" id="address" placeholder="Address">
+                        </div>
+                        <div class="address-group">
+                            <label for="postcode">Postcode</label>
+                            <input type="text" id="postcode" placeholder="Postcode">
+                        </div>
+                    </div>
+                    <div class="address-group-row">
+                        <div class="address-group">
+                            <label for="city">City/Suburb</label>
+                            <input type="text" id="city" placeholder="City/Suburb">
+                        </div>
+                        <div class="address-group">
+                            <label for="state">State/Territory</label>
+                            <input type="text" id="state" placeholder="State/Territory">
+                        </div>
+                    </div>
+                </div>
+                <div class="order-payment">
+                    <div class="order-price">
+                        <div class="order-price-row">
+                            <p class="muted">Items:</p>
+                            <p id="order-items">-</p>
+                        </div>
+                        <div class="order-price-row">
+                            <p class="muted">Delivery:</p>
+                            <p>FREE</p>
+                        </div>
+                        <div class="order-price-row">
+                            <p class="muted">Transfer Fee:</p>
+                            <p id="order-tax">-</p>
+                        </div>
+                        <div class="order-price-row total">
+                            <p class="muted">Order Total:</p>
+                            <p id="order-total">-</p>
+                        </div>
+                    </div>
+                    <button id="create-order" title="Buy U Brush PRO">Pay Now</button>
+                    <p id="order-error-msg" class="order-error-msg"></p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-links">
+                <a href="/" title="Home">Home</a>
+                <a href="/about" title="About">About</a>
+                <a href="/contact" title="Contact">Contact</a>
+                <a href="/track" title="Contact">Track package</a>
+                <a href="/U-Brush-PRO" title="Buy U Brush PRO">Buy</a>
+            </div>
+            <div class="footer-copyright">
+                <p>Built by <a href="https://16bitdevelopment.com" target="_blank">16 Bit Development</a></p>
+                <p>&copy; U Brush PRO <span id="date-year"></span></p>
+            </div>
+        </footer>
+
+        <script>
+            const yearEl = document.getElementById("date-year");
+            yearEl.innerHTML = new Date().getFullYear();
+        </script>
+        
+        <script>
+            const stockLevel = parseInt('<%= stock %>');
+
+            const mainEl = document.getElementById("main");
+            const deliveryEl = document.getElementById("delivery");
+
+            const stockLevelEl = document.getElementById("stock-level");
+            const buyProductEl = document.getElementById("buy-u-brush-pro");
+
+            const buyBtn = document.getElementById("buy-u-brush-pro");
+            const createOrderBtn = document.getElementById("create-order");
+            const backToMainEl = document.getElementById("back-main");
+
+            const productQuantityEl = document.getElementById("product-quantity");
+            const orderCountryEl = document.getElementById("country");
+            const orderNameEl = document.getElementById("name");
+            const orderEmailEl = document.getElementById("email");
+            const orderAddressEl = document.getElementById("address");
+            const orderPostcodeEl = document.getElementById("postcode");
+            const orderCityEl = document.getElementById("city");
+            const orderStateEl = document.getElementById("state");
+
+            const orderItemsEl = document.getElementById("order-items");
+            const orderTaxEl = document.getElementById("order-tax");
+            const orderTotalEl = document.getElementById("order-total");
+
+            const productErrorMsg = document.getElementById("product-error-msg");
+            const orderErrorMsg = document.getElementById("order-error-msg");
+
+            if (stockLevel > 0) {
+                stockLevelEl.innerHTML = stockLevel + ' In Stock';
+
+                for (let i = 0; i < stockLevel; i += 1) {
+                    if (i > 4) {
+                        break;
+                    }
+                    productQuantityEl.children[i].style.display = "inline";
+                }
+            } else {
+                stockLevelEl.innerHTML = 'No Stock';
+                stockLevelEl.classList.add("no-stock");
+
+                productQuantityEl.remove();
+
+                buyProductEl.remove();
+            }
+
+            function isValidInputs(type) {
+                if (parseInt(productQuantityEl.value) > stockLevel) {
+                    return "Please enter a valid quantity";
+                }
+
+                if (type === 1) {
+                    if (/^[1-5]$/.test(productQuantityEl.value)) {
+                        return "";
+                    } else {
+                        return "Please enter a valid quantity";
+                    }
+                }
+
+                const validInputs = [
+                    {
+                        string: productQuantityEl.value,
+                        regex: /^[1-5]$/,
+                        msg: "Please enter a valid quantity"
+                    }, {
+                        string: orderNameEl.value,
+                        regex: /^\p{L}+(?:[ '-]\p{L}+)*$/u,
+                        msg: "Please enter a valid name"
+                    }, {
+                        string: orderEmailEl.value,
+                        regex: /^(?!.*\.\.)[\p{L}0-9._%+-]+@[\p{L}0-9.-]+\.[\p{L}]{2,}$/u,
+                        msg: "Please enter a valid email"
+                    }, {
+                        string: orderAddressEl.value,
+                        regex: /^[\p{L}\d][\p{L}\d\s.,'’\-/#]{2,}$/u,
+                        msg: "Please enter a valid address"
+                    }, {
+                        string: orderPostcodeEl.value,
+                        regex: /^[\p{L}\d][\p{L}\d\s\-]{2,9}$/u,
+                        msg: "Please enter a valid postcode"
+                    }, {
+                        string: orderCityEl.value,
+                        regex: /^[\p{L}][\p{L}\s.'’\-]{1,}$/u,
+                        msg: "Please enter a valid city/suburb"
+                    }, {
+                        string: orderStateEl.value,
+                        regex: /^[\p{L}][\p{L}\s.'’\-]{1,}$/u,
+                        msg: "Please enter a valid state/territory"
+                    }
+                ];
+
+                for (let i = 0; i < validInputs.length; i += 1) {
+                    const input = validInputs[i];
+
+                    if (!input.regex.test(input.string)) {
+                        return input.msg;
+                    }
+                }
+
+                const countries = [
+                    "Afghanistan",
+                    "Albania",
+                    "Algeria",
+                    "American Samoa",
+                    "Angola",
+                    "Anguilla",
+                    "Antigua and Barbuda",
+                    "Argentina",
+                    "Armenia",
+                    "Aruba",
+                    "Austria",
+                    "Australia",
+                    "Azerbaijan",
+                    "Bahamas",
+                    "Bahrain",
+                    "Bangladesh",
+                    "Barbados",
+                    "Belarus",
+                    "Belgium",
+                    "Belize",
+                    "Benin",
+                    "Bermuda",
+                    "Bhutan",
+                    "Bolivia",
+                    "Bonaire, Saint Eustatius and Saba (Netherlands Caribbean)",
+                    "Bosnia and Herzegovina",
+                    "Botswana",
+                    "Brazil",
+                    "British Indian Ocean Territory",
+                    "Brunei Darussalam",
+                    "Bulgaria",
+                    "Burkina Faso",
+                    "Burundi",
+                    "Cambodia",
+                    "Cameroon",
+                    "Canada",
+                    "Cabo Verde (formerly Cape Verde)",
+                    "Cayman Islands",
+                    "Central African Republic",
+                    "Chad",
+                    "Chile",
+                    "China",
+                    "Colombia",
+                    "Comoros",
+                    "Congo (Democratic Republic)",
+                    "Congo (Republic)",
+                    "Cook Islands",
+                    "Costa Rica",
+                    "Cote d'Ivoire",
+                    "Croatia",
+                    "Cuba",
+                    "Curaçao",
+                    "Cyprus",
+                    "Czechia (Czech Republic)",
+                    "Denmark",
+                    "Djibouti",
+                    "Dominica",
+                    "Dominican Republic",
+                    "Ecuador",
+                    "Egypt",
+                    "El Salvador",
+                    "Equatorial Guinea",
+                    "Eritrea",
+                    "Estonia",
+                    "Eswatini (formerly Swaziland)",
+                    "Ethiopia",
+                    "Falkland Islands (Malvinas)",
+                    "Faroe Islands",
+                    "Fiji",
+                    "Finland",
+                    "France",
+                    "French Guiana (Guyana)",
+                    "French Polynesia",
+                    "Gabon",
+                    "Gambia",
+                    "Georgia",
+                    "Germany",
+                    "Ghana",
+                    "Gibraltar",
+                    "Greece",
+                    "Greenland",
+                    "Grenada",
+                    "Guadeloupe",
+                    "Guam",
+                    "Guatemala",
+                    "Guinea",
+                    "Guinea-Bissau",
+                    "Guyana",
+                    "Haiti",
+                    "Honduras",
+                    "Hong Kong",
+                    "Hungary",
+                    "Iceland",
+                    "India",
+                    "Indonesia",
+                    "Iran",
+                    "Iraq",
+                    "Ireland",
+                    "Israel",
+                    "Italy",
+                    "Jamaica",
+                    "Japan",
+                    "Jordan",
+                    "Kazakhstan",
+                    "Kenya",
+                    "Kiribati",
+                    "Kosovo",
+                    "Kuwait",
+                    "Kyrgyzstan",
+                    "Laos",
+                    "Latvia",
+                    "Lebanon",
+                    "Lesotho",
+                    "Liberia",
+                    "Liechtenstein",
+                    "Lithuania",
+                    "Luxembourg",
+                    "Macao",
+                    "Madagascar",
+                    "Malawi",
+                    "Malaysia",
+                    "Maldives",
+                    "Mali",
+                    "Malta",
+                    "Marshall Islands",
+                    "Martinique",
+                    "Mauritania",
+                    "Mauritius",
+                    "Mexico",
+                    "Micronesia",
+                    "Moldova",
+                    "Mongolia",
+                    "Montenegro",
+                    "Montserrat",
+                    "Morocco",
+                    "Mozambique",
+                    "Myanmar (Burma)",
+                    "Namibia",
+                    "Nauru",
+                    "Nepal",
+                    "Netherlands",
+                    "New Caledonia",
+                    "New Zealand",
+                    "Nicaragua",
+                    "Niger",
+                    "Nigeria",
+                    "Niue",
+                    "North Korea",
+                    "North Macedonia (formerly Macedonia)",
+                    "North Mariana Islands",
+                    "Norway",
+                    "Oman",
+                    "Pakistan",
+                    "Palau",
+                    "Panama",
+                    "Papua New Guinea",
+                    "Paraguay",
+                    "Peru",
+                    "Philippines",
+                    "Pitcairn Island",
+                    "Poland",
+                    "Portugal",
+                    "Puerto Rico",
+                    "Qatar",
+                    "Reunion",
+                    "Romania",
+                    "Russia",
+                    "Rwanda",
+                    "Saint Helena, Ascension and Tristan da Cunha",
+                    "Saint Kitts and Nevis",
+                    "Saint Martin (French Part)",
+                    "Saint Lucia",
+                    "Saint Pierre and Miquelon",
+                    "Saint Vincent and the Grenadines",
+                    "Samoa",
+                    "Sao Tome and Principe",
+                    "Saudi Arabia",
+                    "Senegal",
+                    "Serbia",
+                    "Seychelles",
+                    "Sierra Leone",
+                    "Singapore",
+                    "Slovak Republic (Slovakia)",
+                    "Slovenia",
+                    "Soloman Islands",
+                    "Somalia",
+                    "South Africa",
+                    "South Korea",
+                    "Spain",
+                    "Sri Lanka",
+                    "Sudan",
+                    "Suriname",
+                    "Sweden",
+                    "Switzerland",
+                    "Syrian Arab Republic",
+                    "Taiwan",
+                    "Tajikistan",
+                    "Tanzania",
+                    "Thailand",
+                    "Timor Leste",
+                    "Togo",
+                    "Tokelau",
+                    "Tonga",
+                    "Trinidad and Tobago",
+                    "Tunisia",
+                    "Turkiye (formerly Turkey)",
+                    "Turkmenistan",
+                    "Turks and Caicos Islands",
+                    "Tuvalu",
+                    "Uganda",
+                    "Ukraine",
+                    "United Arab Emirates",
+                    "United Kingdom (including Northern Ireland)",
+                    "United States",
+                    "United States Minor Outlying Islands",
+                    "Uruguay",
+                    "Uzbekistan",
+                    "Vanuatu",
+                    "Virgin Islands (British)",
+                    "Virgin Islands (US)",
+                    "Vatican City",
+                    "Venezuela",
+                    "Vietnam",
+                    "Wallis and Futuna",
+                    "Yemen",
+                    "Zambia",
+                    "Zimbabwe"
+                ];
+
+                if (countries.indexOf(orderCountryEl.value) === -1) {
+                    return "Please enter a valid country/region";
+                }
+
+                return "";
+            }
+
+            buyBtn.addEventListener("click", (event) => {
+                const validInputResult = isValidInputs(1);
+                if (validInputResult !== "") {
+                    productErrorMsg.innerHTML = validInputResult;
+
+                    return;
+                }
+                
+                productErrorMsg.innerHTML = "";
+
+                const orderTax = Math.floor(((productQuantityEl.value * 35) * 0.029 + 0.30) * 100) / 100;
+                const orderTotal = (parseInt(productQuantityEl.value) * 35) + orderTax;
+
+                orderItemsEl.innerHTML = `${productQuantityEl.value} x $35`;
+                orderTaxEl.innerHTML = `$${orderTax}`;
+                orderTotalEl.innerHTML = `USD $${orderTotal}`;
+
+                mainEl.style.display = "none";
+
+                deliveryEl.style.display = "flex";
+            });
+
+            backToMainEl.addEventListener("click", (event) => {
+                mainEl.style.display = "grid";
+
+                deliveryEl.style.display = "none";
+            });
+
+            createOrderBtn.addEventListener("click", (event) => {
+                const validInputResult = isValidInputs();
+                if (validInputResult !== "") {
+                    orderErrorMsg.innerHTML = validInputResult;
+
+                    return;
+                }
+
+                orderErrorMsg.innerHTML = "";
+
+                fetch("/buy-u-brush-pro", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        quantity: productQuantityEl.value,
+                        name: orderNameEl.value,
+                        email: orderEmailEl.value,
+                        country: orderCountryEl.value,
+                        address: orderAddressEl.value,
+                        postcode: orderPostcodeEl.value,
+                        city: orderCityEl.value,
+                        state: orderStateEl.value
+                    })
+                })
+                .then((response) => response.text())
+                .then((data) => {
+                    const parsedData = JSON.parse(data)
+
+                    if (!parsedData[0]) {
+                        productErrorMsg.innerHTML = parsedData[1];
+
+                        backToMainEl.click();
+                    } else {
+                        window.location.href = parsedData[1];
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

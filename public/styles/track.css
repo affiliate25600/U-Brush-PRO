@@ -1,0 +1,320 @@
+main {
+    padding: 3em;
+}
+
+.main-top {
+    margin-bottom: 3em;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-top h1 {
+    color: var(--primary);
+
+    font-size: 2.5em;
+}
+
+.main-top a {
+    width: fit-content;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+
+    padding: 0.5em 1em;
+
+    color: var(--secondary);
+
+    font-size: 1.25em;
+
+    text-decoration: none;
+
+    background-color: transparent;
+
+    border: 1px solid var(--secondary);
+    border-radius: 9999px;
+
+    cursor: pointer;
+
+    transition: color 0.25s, background-color 0.25s;
+}
+
+.main-top a:hover {
+    color: var(--text);
+
+    background-color: var(--secondary);
+}
+
+.main-top a svg {
+    transition: fill 0.25s;
+}
+
+.main-top a:hover svg {
+    fill: var(--text);
+}
+
+h2 {
+    font-size: 2em;
+}
+
+.order-tracking-est-arrival {
+    color: var(--text-muted);
+}
+
+.order-tracking {
+    margin-top: 1em;
+    margin-bottom: 3em;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+
+    padding: 3em;
+
+    background-image: linear-gradient(var(--bg-light), var(--bg));
+    box-shadow: inset 0 1px 2px var(--highlight), 0 -1px 2px var(--border);
+
+    border-radius: 1.5em;
+}
+
+.order-tracking .tracking-status-text {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.order-tracking .tracking-status-text p {
+    width: 100%;
+
+    opacity: 0.5;
+
+    font-size: 1.5em;
+    font-weight: 500;
+
+    text-align: center;
+}
+
+.order-tracking.status-0 .tracking-status-text p:nth-child(1) {
+    opacity: 1;
+}
+
+.order-tracking.status-1 .tracking-status-text p:nth-child(2) {
+    opacity: 1;
+}
+
+.order-tracking.status-2 .tracking-status-text p:nth-child(3) {
+    opacity: 1;
+}
+
+.order-tracking.status-3 .tracking-status-text p:nth-child(4) {
+    opacity: 1;
+}
+
+.order-tracking .tracking-status-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.order-tracking .tracking-status-bar .tracking-status-bar-section {
+    position: relative;
+
+    width: 100%;
+}
+
+.order-tracking .tracking-status-bar .tracking-status-bar-section .tracking-status-bar-line {
+    height: 0.5em;
+    width: calc(50% - 2em);
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+
+    translate: 0 -50%;
+
+    background-color: var(--text-muted);
+    opacity: 0.5;
+
+    border-top-left-radius: 9999px;
+    border-bottom-left-radius: 9999px;
+}
+
+.order-tracking .tracking-status-bar .tracking-status-bar-section .tracking-status-bar-line.left {
+    left: 0;
+    right: unset;
+
+    border-radius: unset;
+    border-top-right-radius: 9999px;
+    border-bottom-right-radius: 9999px;
+}
+
+.order-tracking.status-1 .tracking-status-bar .tracking-status-bar-section:nth-child(1) .tracking-status-bar-line.right {
+    background-color: var(--success);
+    opacity: 1;
+}
+
+.order-tracking.status-1 .tracking-status-bar .tracking-status-bar-section:nth-child(2) .tracking-status-bar-line.left {
+    background-color: var(--success);
+    opacity: 1;
+}
+
+.order-tracking.status-2 .tracking-status-bar .tracking-status-bar-section:nth-child(2) .tracking-status-bar-line.right {
+    background-color: var(--success);
+    opacity: 1;
+}
+
+.order-tracking.status-2 .tracking-status-bar .tracking-status-bar-section:nth-child(3) .tracking-status-bar-line.left {
+    background-color: var(--success);
+    opacity: 1;
+}
+
+.order-tracking.status-3 .tracking-status-bar .tracking-status-bar-section:nth-child(3) .tracking-status-bar-line.right {
+    background-color: var(--success);
+    opacity: 1;
+}
+
+.order-tracking.status-3 .tracking-status-bar .tracking-status-bar-section:nth-child(4) .tracking-status-bar-line.left {
+    background-color: var(--success);
+    opacity: 1;
+}
+
+.order-tracking .tracking-status-bar .tracking-status-bar-section svg {
+    height: 3em;
+    width: 3em;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    translate: -50% -50%;
+
+    opacity: 0.5;
+}
+
+.order-tracking.status-0 .tracking-status-bar .tracking-status-bar-section:nth-child(1) svg {
+    fill: var(--success);
+    opacity: 1;
+}
+
+.order-tracking.status-1 .tracking-status-bar .tracking-status-bar-section:nth-child(2) svg {
+    fill: var(--success);
+    opacity: 1;
+}
+
+.order-tracking.status-2 .tracking-status-bar .tracking-status-bar-section:nth-child(3) svg {
+    fill: var(--success);
+    opacity: 1;
+}
+
+.order-tracking.status-3 .tracking-status-bar .tracking-status-bar-section:nth-child(4) svg {
+    fill: var(--success);
+    opacity: 1;
+}
+
+.order-info {
+    margin-top: 1em;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    padding: 3em;
+
+    background-image: linear-gradient(var(--bg-light), var(--bg));
+    box-shadow: inset 0 1px 2px var(--highlight), 0 -1px 2px var(--border);
+
+    border-radius: 1.5em;
+}
+
+.order-info .order-info-group h4 {
+    margin-bottom: 0.5em;
+
+    font-size: 1.5em;
+}
+
+.order-info .order-info-group p {
+    color: var(--text-muted);
+
+    font-size: 1.25em;
+}
+
+@media (max-width: 800px) {
+    main {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 700px) {
+    main {
+        font-size: 0.75rem;
+    }
+
+    .main-top {
+        flex-direction: column;
+        align-items: start;
+        gap: 1em;
+    }
+
+    .order-tracking {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .order-tracking .tracking-status-text {
+        flex-direction: column;
+        width: 100%;
+        gap: unset;
+    }
+
+    .order-tracking .tracking-status-text p {
+        padding: 2.5em 0;
+        font-size: 1.75em;
+    }
+
+    .order-tracking .tracking-status-bar {
+        width: 100%;
+        flex-direction: column;
+        justify-content: start;
+    }
+
+    .order-tracking .tracking-status-bar .tracking-status-bar-section {
+        height: 100%
+    }
+
+    .order-tracking .tracking-status-bar .tracking-status-bar-section .tracking-status-bar-line {
+        width: 0.5em;
+        height: calc(50% - 2em);
+
+        inset: unset;
+        bottom: 0;
+        left: 50%;
+
+        translate: -50% 0;
+
+        border-radius: 0;
+        border-top-left-radius: 9999px;
+        border-top-right-radius: 9999px;
+    }
+
+    .order-tracking .tracking-status-bar .tracking-status-bar-section .tracking-status-bar-line.left {
+        bottom: unset;
+        top: 0;
+        left: 50%;
+
+        border-radius: 0;
+        border-bottom-left-radius: 9999px;
+        border-bottom-right-radius: 9999px;
+    }
+
+    footer {
+        font-size: 0.75em;
+    }
+}
+
+@media (max-width: 500px) {
+    footer {
+        font-size: 0.6rem;
+    }
+}

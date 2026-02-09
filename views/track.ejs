@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto+Mono:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <title>Order <%= orderId %> | U Brush PRO</title>
+
+        <link rel="stylesheet" href="/styles/general.css">
+        <link rel="stylesheet" href="/styles/nav.css">
+        <link rel="stylesheet" href="/styles/footer.css">
+        <link rel="stylesheet" href="/styles/track.css">
+    </head>
+    <body>
+        <nav>
+            <a href="/track" title="Track order">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--text)"><path d="M240-160q-50 0-85-35t-35-85H40v-440q0-33 23.5-56.5T120-800h560v160h120l120 160v200h-80q0 50-35 85t-85 35q-50 0-85-35t-35-85H360q0 50-35 85t-85 35Zm0-80q17 0 28.5-11.5T280-280q0-17-11.5-28.5T240-320q-17 0-28.5 11.5T200-280q0 17 11.5 28.5T240-240ZM120-360h32q17-18 39-29t49-11q27 0 49 11t39 29h272v-360H120v360Zm600 120q17 0 28.5-11.5T760-280q0-17-11.5-28.5T720-320q-17 0-28.5 11.5T680-280q0 17 11.5 28.5T720-240Zm-40-200h170l-90-120h-80v120ZM360-540Z"/></svg>
+            </a>
+            <div class="links">
+                <a href="/" title="Home">
+                    <span>Home</span>
+                </a>
+                <a href="/U-Brush-PRO" title="Buy U Brush PRO">
+                    <span>Buy</span>
+                </a>
+                <a href="/about" title="About">
+                    <span>About</span>
+                </a>
+            </div>
+            <a href="/contact" title="Help">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--text)"><path d="M474.86-232q26.62 0 45.88-18.86T540-296.34q0-26.62-19.12-45.14T475.14-360q-26.62 0-45.88 18.38t-19.26 45Q410-270 429.12-251q19.12 19 45.74 19ZM423-391h104q0-30.39 7.5-51.2Q542-463 574-495q24-21 38.5-46.92t14.5-62.32q0-61.76-40.98-94.26-40.99-32.5-99.7-32.5Q421-731 379-694.5T321-607l96 36q5-19 20-40.5t44-21.5q19 0 29.5 12.25T521-595q0 15-10.5 31T489-539q-43 39-54.5 62.5T423-391Zm57 357q-92.64 0-174.47-34.6-81.82-34.61-142.07-94.86T68.6-305.53Q34-387.36 34-480q0-92.9 34.66-174.45 34.67-81.55 95.18-141.94 60.51-60.39 142.07-95Q387.48-926 480-926q92.89 0 174.48 34.59 81.59 34.6 141.96 94.97 60.37 60.37 94.97 141.99Q926-572.83 926-479.92q0 92.92-34.61 174.25-34.61 81.32-95 141.83Q736-103.33 654.45-68.66 572.9-34 480-34Zm-.23-136q130.74 0 220.49-89.51Q790-349.03 790-479.77t-89.51-220.49Q610.97-790 480.23-790t-220.49 89.51Q170-610.97 170-480.23t89.51 220.49Q349.03-170 479.77-170Zm.23-310Z"/></svg>
+            </a>
+        </nav>
+
+        <main>
+            <div class="main-top">
+                <a href="/track" title="Back to track">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--secondary)"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg>
+                    Back
+                </a>
+                <h1>Order <%= orderId %></h1>
+            </div>
+            <h2>Tracking</h2>
+            <h3 class="order-tracking-est-arrival">Est. arrival: <%= orderArrival %></h3>
+            <div class="order-tracking status-0" id="order-tracking">
+                <div class="tracking-status-text">
+                    <p>Order Created</p>
+                    <p>It's on its way</p>
+                    <p>It's coming today</p>
+                    <p>Delivered</p>
+                </div>
+                <div class="tracking-status-bar">
+                    <div class="tracking-status-bar-section">
+                        <div class="tracking-status-bar-line right"></div>
+                        <svg class="status-complete" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--text-muted)"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+                    </div>
+                    <div class="tracking-status-bar-section">
+                        <div class="tracking-status-bar-line left"></div>
+                        <div class="tracking-status-bar-line right"></div>
+                        <svg class="status-complete" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--text-muted)"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+                    </div>
+                    <div class="tracking-status-bar-section">
+                        <div class="tracking-status-bar-line left"></div>
+                        <div class="tracking-status-bar-line right"></div>
+                        <svg class="status-complete" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--text-muted)"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+                    </div>
+                    <div class="tracking-status-bar-section">
+                        <div class="tracking-status-bar-line left"></div>
+                        <svg class="status-complete" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--text-muted)"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Info</h2>
+            <div class="order-info">
+                <div class="order-info-group">
+                    <h4>Order:</h4>
+                    <p><%= orderQuantity %> x U Brush PRO</p>
+                </div>
+                <div class="order-info-group">
+                    <h4>Deliver to:</h4>
+                    <p><%= orderCity %>, <%= orderState %></p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-links">
+                <a href="/" title="Home">Home</a>
+                <a href="/about" title="About">About</a>
+                <a href="/contact" title="Contact">Contact</a>
+                <a href="/track" title="Contact">Track package</a>
+                <a href="/U-Brush-PRO" title="Buy U Brush PRO">Buy</a>
+            </div>
+            <div class="footer-copyright">
+                <p>Built by <a href="https://16bitdevelopment.com" target="_blank">16 Bit Development</a></p>
+                <p>&copy; U Brush PRO <span id="date-year"></span></p>
+            </div>
+        </footer>
+
+        <script>
+            const yearEl = document.getElementById("date-year");
+            yearEl.innerHTML = new Date().getFullYear();
+        </script>
+
+        <script>
+            const orderStatus = "<%= orderStatus %>";
+
+            const orderTrackingEl = document.getElementById("order-tracking");
+
+            if (orderStatus === "0") {
+                orderTrackingEl.classList.add("status-0");
+            } else if (orderStatus === "1") {
+                orderTrackingEl.classList.add("status-0");
+                orderTrackingEl.classList.add("status-1");
+            } else if (orderStatus === "2") {
+                orderTrackingEl.classList.add("status-0");
+                orderTrackingEl.classList.add("status-1");
+                orderTrackingEl.classList.add("status-2");
+            } else if (orderStatus === "3") {
+                orderTrackingEl.classList.add("status-0");
+                orderTrackingEl.classList.add("status-1");
+                orderTrackingEl.classList.add("status-2");
+                orderTrackingEl.classList.add("status-3");
+            }
+        </script>
+    </body>
+</html>
