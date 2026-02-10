@@ -22,7 +22,7 @@ document.body.appendChild( renderer.domElement );
 
 const loader = new GLTFLoader();
 
-loader.load("/UBrushPRO.glb", function (gltf) {
+loader.load("/U-Brush-PRO.glb", function (gltf) {
     const model = gltf.scene;
 
     model.scale.set(1.4, 1.4, 1.4);
