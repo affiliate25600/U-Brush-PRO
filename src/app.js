@@ -172,6 +172,7 @@ app.post("/buy-u-brush-pro", async (req, res) => {
         res.send(orderValidation);
     } else {
         const session = await stripeConfig.checkout.sessions.create({
+            customer_email: orderData.email,
             line_items: [
                 {
                     price_data: {
