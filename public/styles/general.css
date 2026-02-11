@@ -3,7 +3,7 @@
     --bg: hsl(0 0 10%);
     --bg-glass: hsla(0, 0%, 10%, 0.25);
     --bg-light: hsl(0 0 15%);
-    --text: hsl(211 47% 95%);
+    --text: #ecf2f8;
     --text-muted: hsl(211 7% 70%);
     --highlight: hsl(211 5% 39%);
     --border: hsl(211 6% 28%);
