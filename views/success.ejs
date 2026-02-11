@@ -11,6 +11,17 @@
             gtag('config', 'AW-17946078131');
         </script>
 
+        <!-- Event snippet for Purchase conversion page -->
+        <script>
+        gtag('event', 'conversion', {
+            'send_to': 'AW-17946078131/Y7HsCLSnwPYbELPXre1C',
+            'value': 1.0,
+            'currency': 'AUD',
+            'transaction_id': ''
+            // 'new_customer': true /* calculate dynamically, populate with true/false */,
+        });
+        </script>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -87,17 +98,6 @@
             }
 
             checkStatus();
-        </script>
-
-        <!-- Event snippet for Purchase conversion page -->
-        <script>
-        gtag('event', 'conversion', {
-            'send_to': 'AW-17946078131/Y7HsCLSnwPYbELPXre1C',
-            'value': 1.0,
-            'currency': 'AUD',
-            'transaction_id': ''
-            // 'new_customer': true /* calculate dynamically, populate with true/false */,
-        });
         </script>
     </body>
 </html>
