@@ -1,0 +1,57 @@
+main {
+    padding: 3em 6em;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    margin-top: 1.25em;
+    margin-bottom: 1em;
+
+    font-size: 2em;
+}
+
+h3 {
+    margin-top: 0.75em;
+    margin-bottom: 0.5em;
+    
+    font-size: 1.5em;
+}
+
+p {
+    margin: 0.5em 0;
+
+    font-size: 1.25em;
+}
+
+li {
+    font-size: 1.25em;
+}
+
+a:hover {
+    color: var(--text-muted);
+
+    transition: color 0.25s;
+}
+
+.mute {
+    color: var(--text-muted);
+}
+
+.tab {
+    padding-left: 3em;
+}
+
+@media (max-width: 700px) {
+    footer {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 500px) {
+    footer {
+        font-size: 0.6rem;
+    }
+}

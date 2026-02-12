@@ -238,6 +238,10 @@ app.get("/track/:id", async (req, res) => {
     });
 });
 
+app.get("/contact", (req, res) => {
+    res.send("Contact page being built... :)")
+});
+
 app.use((req, res, next) => {
   res.status(404).send("Sorry, the requested page cannot be found!");
 });
