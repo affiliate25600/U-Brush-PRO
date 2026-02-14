@@ -228,7 +228,7 @@ const countries = [
     "Zimbabwe"
 ];
 
-export function isValidInputs(orderData, stockLevel) {
+export function isValidOrderInputs(orderData, stockLevel) {
     const validInputs = {
         quantity: /^[1-5]$/,
         name: /^\p{L}+(?:[ '-]\p{L}+)*$/u,
@@ -251,6 +251,22 @@ export function isValidInputs(orderData, stockLevel) {
 
     if (countries.indexOf(orderData.country) === -1) {
         return [false, "Please enter a valid country/region"];
+    }
+
+    return [true];
+}
+
+export function isValidContactInputs(messageData) {
+    const validInputs = {
+        name: /^\p{L}+(?:[ '-]\p{L}+)*$/u,
+        email: /^(?!.*\.\.)[\p{L}0-9._%+-]+@[\p{L}0-9.-]+\.[\p{L}]{2,}$/u,
+        message: /^[\p{L}\p{N}\p{P}\p{Z}\p{M}\p{S}\r\n]{0,500}$/u
+    };
+
+    for (let item in validInputs) {
+        if (!validInputs.hasOwnProperty(item) || !validInputs[item].test(messageData[item])) {
+            return [false, `Please enter a valid ${item}`];
+        }
     }
 
     return [true];

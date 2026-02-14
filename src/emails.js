@@ -77,4 +77,32 @@ export async function orderEmail(orderData) {
     });
 };
 
-//orderEmail({ orderName: "Noah Gallagher-Summers", orderEmail: "noahgallaghersummers@icloud.com", orderQuantity: "3", id: "256" });
+export async function contactEmail(messageData) {
+    const transport = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+            user: "affiliate25600@gmail.com",
+            pass: process.env.GOOGLE_APP_PASSWORD,
+        },
+    });
+
+    let mailOptions = {
+        from: "U Brush PRO",
+        to: "noahgallaghersummers@icloud.com",
+        subject: `New Message from ${messageData.name}`,
+        html: `
+            <h3>Email:<h3>
+            <p>${messageData.email}</p>
+            <h3>Message:<h3>
+            <p>${messageData.message}</p>
+        `
+    };
+
+    transport.sendMail(mailOptions, function(error, info){
+        if (error) {
+            console.log(error);
+        } else {
+            console.log("Contact email sent");
+        }
+    });
+};

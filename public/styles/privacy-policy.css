@@ -3,7 +3,10 @@ main {
 }
 
 h1 {
+    color: var(--primary);
+
     font-size: 3em;
+    font-family: "Archivo Black", sans-serif;
 }
 
 h2 {

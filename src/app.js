@@ -2,8 +2,8 @@ import express from "express";
 import admin from "firebase-admin";
 import dotenv from "dotenv";
 import stripe from "stripe";
-import { isValidInputs } from "./order-validation.js";
-import { notificationEmail, orderEmail } from "./emails.js";
+import { isValidContactInputs, isValidOrderInputs } from "./order-validation.js";
+import { notificationEmail, orderEmail, contactEmail } from "./emails.js";
 
 dotenv.config();
 
@@ -166,7 +166,7 @@ app.post("/buy-u-brush-pro", async (req, res) => {
 
     const stockLevel = await db.ref("stock").get();
 
-    const orderValidation = isValidInputs(orderData, stockLevel.val());
+    const orderValidation = isValidOrderInputs(orderData, stockLevel.val());
 
     if (!orderValidation[0]) {
         res.send(orderValidation);
@@ -239,7 +239,27 @@ app.get("/track/:id", async (req, res) => {
 });
 
 app.get("/contact", (req, res) => {
-    res.send("Contact page being built... :)")
+    res.render("contact", {
+        serverMsg: ``
+    });
+});
+
+app.post("/contact", (req, res) => {
+    const messageData = req.body;
+
+    const validInputResult = isValidContactInputs(messageData);
+
+    if (!validInputResult[0]) {
+        res.render("contact", {
+            serverMsg: `<p class="server-msg error">${validInputResult[1]}</p>`
+        });
+    } else {
+        contactEmail(messageData);
+    
+        res.render("contact", {
+            serverMsg: `<p class="server-msg">Email Sent!</p>`
+        });
+    }
 });
 
 app.use((req, res, next) => {
