@@ -6,7 +6,7 @@ const imageForwardsEl = document.getElementById("product-forwards");
 const imageBackwardsEl = document.getElementById("product-backwards");
 
 let activeImage = 0;
-const imageNum = 2;
+const imageNum = 3;
 
 function updateActiveImage() {
     if (activeImage < 0) {
