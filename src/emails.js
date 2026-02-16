@@ -15,7 +15,7 @@ export async function notificationEmail(orderData) {
 
     let mailOptions = {
         from: "U Brush PRO",
-        to: "noahgallaghersummers@icloud.com",
+        to: "affiliate25600@gmail.com",
         subject: `New Order from ${orderData.orderName}`,
         html: `
             <h1>Order:</h1>
@@ -88,7 +88,7 @@ export async function contactEmail(messageData) {
 
     let mailOptions = {
         from: "U Brush PRO",
-        to: "noahgallaghersummers@icloud.com",
+        to: "affiliate25600@gmail.com",
         subject: `New Message from ${messageData.name}`,
         html: `
             <h3>Email:<h3>

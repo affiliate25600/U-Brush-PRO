@@ -80,6 +80,7 @@ async function markEventProcessed(eventId) {
     await db.ref(`stripe_events/${eventId}`).set(true);
 }
 
+// FOR SANDBOX: stripe listen --forward-to http://localhost:3000/webhook
 app.post(
     "/webhook",
     express.raw({ type: "application/json" }),
@@ -260,6 +261,12 @@ app.post("/contact", (req, res) => {
             serverMsg: `<p class="server-msg">Email Sent!</p>`
         });
     }
+});
+
+app.get("/admin", (req, res) => {
+    res.render("admin", {
+        allOrders: JSON.stringify(allOrders)
+    });
 });
 
 app.use((req, res, next) => {
