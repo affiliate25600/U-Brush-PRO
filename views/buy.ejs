@@ -25,6 +25,24 @@
         </script>
         <!-- TikTok Pixel Code End -->
 
+        <!-- Facebook Pixel Code -->
+        <script>
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window,document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '1852552772065950'); 
+            fbq('track', 'PageView');
+        </script>
+        <noscript>
+            <img height="1" width="1" src="https://www.facebook.com/tr?id=1852552772065950&ev=PageView &noscript=1"/>
+        </noscript>
+        <!-- End Facebook Pixel Code -->
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -69,11 +87,19 @@
                     <img src="/images/a.png" alt="Image 1">
                     <img src="/images/b.png" alt="Image 2">
                     <img src="/images/c.png" alt="Image 3">
+                    <img src="/images/d.png" alt="Image 4">
+                    <img src="/images/e.png" alt="Image 5">
+                    <img src="/images/f.png" alt="Image 6">
+                    <img src="/images/g.png" alt="Image 7">
                     <div class="product-images-interface">
                         <button id="product-backwards" title="Last image">
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--text-muted)"><path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/></svg>
                         </button>
                         <div class="image-number" id="image-number">
+                            <div class="image-number-dot"></div>
+                            <div class="image-number-dot"></div>
+                            <div class="image-number-dot"></div>
+                            <div class="image-number-dot"></div>
                             <div class="image-number-dot"></div>
                             <div class="image-number-dot"></div>
                             <div class="image-number-dot"></div>
