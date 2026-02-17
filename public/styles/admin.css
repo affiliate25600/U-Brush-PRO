@@ -95,4 +95,127 @@ body {
 
 .admin-container {
     min-height: 100dvh;
+
+    display: flex;
+}
+
+.admin-container .orders {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    padding: 2em;
+
+    --columns: 13em 20em 10em 15em;
+}
+
+.admin-container .orders .orders-top {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: var(--columns);
+
+    padding: 0 2em;
+}
+
+.admin-container .orders .order {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: var(--columns);
+
+    padding: 1.5em 2em;
+
+    background-image: linear-gradient(var(--bg-light), var(--bg));
+
+    box-shadow: inset 0 2px 2px var(--highlight), 0 -2px 2px var(--border);
+    border-radius: 2em;
+
+    cursor: pointer;
+
+    transition: 0.25s translate;
+}
+
+.admin-container .orders .order:hover {
+    translate: -1em 0;
+}
+
+.admin-container .orders .order p {
+    text-wrap: nowrap;
+    overflow: hidden;
+}
+
+.admin-container .order-view-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: var(--bg-dark);
+
+    opacity: 0;
+
+    pointer-events: none;
+    cursor: pointer;
+
+    transition: 0.25s opacity;
+}
+
+.admin-container.view-active .order-view-backdrop {
+    opacity: 0.5;
+
+    pointer-events: all;
+}
+
+.admin-container .order-view {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+
+    translate: 100% 0;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 3em;
+
+    background-color: var(--bg);
+
+    transition: 0.25s translate;
+}
+
+.admin-container.view-active .order-view {
+    translate: 0;
+}
+
+.admin-container .order-view h2 {
+    color: var(--primary);
+
+    font-size: 2.75em;
+    font-family: "Archivo Black", sans-serif;
+
+    text-align: center;
+}
+
+.admin-container .order-view span {
+    margin-bottom: 1em;
+
+    color: var(--text-muted);
+
+    text-align: center;
+}
+
+.admin-container .order-view h3 {
+    margin-bottom: 0.25em;
+
+    font-size: 1.5em;
+}
+
+.admin-container .order-view p {
+    margin-bottom: 1.25em;
+
+    color: var(--text-muted);
+
+    font-size: 1.25em;
 }

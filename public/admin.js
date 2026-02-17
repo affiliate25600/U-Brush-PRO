@@ -25,8 +25,12 @@ const emailEl = document.getElementById("login-email");
 const passwordEl = document.getElementById("login-password");
 
 const adminContainerEl = document.getElementById("admin-container");
+const ordersEl = document.getElementById("orders");
+const orderViewEl = document.getElementById("order-view");
+const orderViewBgEl = document.getElementById("order-view-backdrop");
 
 let allOrderIds = window.allOrderIds;
+let allOrders = {};
 
 formEl.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -89,10 +93,44 @@ async function getAllOrders() {
         const orderId = allOrderIds[i];
 
         const orderDataSnap = await get(ref(db, `/orders/${orderId}`));
-        console.log(orderDataSnap.val());
+        const orderDataVal = orderDataSnap.val();
+        allOrders[orderId] = orderDataVal;
 
-        adminContainerEl.innerHTML += `Order #${orderId}: ${orderDataSnap.val()}`
+        const orderEl = document.createElement("div");
+        orderEl.classList.add("order");
+
+        orderEl.innerHTML = `
+            <p>${orderId}</p>
+            <p>${orderDataVal.orderName}</p>
+            <p>${orderDataVal.orderQuantity}</p>
+            <p>${orderDataVal.orderCity}, ${orderDataVal.orderState}</p>
+        `;
+
+        orderEl.addEventListener("click", (event) => {
+            const orderStatus = orderDataVal.orderStatus
+
+            adminContainerEl.classList.add("view-active");
+
+            orderViewEl.innerHTML = `
+                <h2>${orderId}</h2>
+                <span>Status: ${orderStatus == 0 ? "Order Created" : orderStatus == 1 ? "It's on its way" : orderStatus == 2 ? "It's coming today" : orderStatus == 3 ? "Delivered" : "Unknown"}</span>
+                <h3>Name</h3>
+                <p>${orderDataVal.orderName}</p>
+                <h3>Email</h3>
+                <p>${orderDataVal.orderEmail}</p>
+                <h3>Full Address</h3>
+                <p>${orderDataVal.orderAddress}, ${orderDataVal.orderCity}, ${orderDataVal.orderState}, ${orderDataVal.orderCountry}</p>
+                <h3>Order</h3>
+                <p>${orderDataVal.orderQuantity} x U Brush PRO</p>
+            `;
+        });
+
+        ordersEl.append(orderEl);
     }
 }
+
+orderViewBgEl.addEventListener("click", (event) => {
+    adminContainerEl.classList.remove("view-active");
+});
 
 window.logOut = logOut;
