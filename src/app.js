@@ -20,7 +20,7 @@ admin.initializeApp({
 const db = admin.database();
 const app = express();
 
-const stripeConfig = stripe(process.env.STRIPE_SECRET_KEY_SANDBOX);
+const stripeConfig = stripe(process.env.STRIPE_SECRET_KEY);
 
 const allOrdersSnap = await db.ref("orders").get();
 let allOrders = [];
@@ -93,7 +93,7 @@ app.post(
             event = stripeConfig.webhooks.constructEvent(
                 req.body,
                 sig,
-                process.env.STRIPE_WEBHOOK_SECRET_SANDBOX
+                process.env.STRIPE_WEBHOOK_SECRET
             );
         } catch (err) {
             console.error("Webhook signature verification failed:", err.message);
