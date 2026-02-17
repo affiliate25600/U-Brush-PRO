@@ -20,6 +20,7 @@ export async function notificationEmail(orderData) {
         html: `
             <h1>Order:</h1>
             <p>U Brush PRO x ${orderData.orderQuantity}</p>
+            <p>Total = $${parseInt(orderData.orderQuantity) * 50}</p>
         `
     };
 

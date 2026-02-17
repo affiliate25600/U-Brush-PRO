@@ -120,6 +120,7 @@ async function getAllOrders() {
                 <p>${orderDataVal.orderAddress}, ${orderDataVal.orderCity}, ${orderDataVal.orderState}, ${orderDataVal.orderCountry}</p>
                 <h3>Order</h3>
                 <p>${orderDataVal.orderQuantity} x U Brush PRO</p>
+                <p>Total = $${orderDataVal.orderQuantity * 50}</p>
             `;
         });
 
