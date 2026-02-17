@@ -20,7 +20,7 @@ admin.initializeApp({
 const db = admin.database();
 const app = express();
 
-const stripeConfig = stripe(process.env.STRIPE_SECRET_KEY);
+const stripeConfig = stripe(process.env.STRIPE_SECRET_KEY_SANDBOX);
 
 const allOrdersSnap = await db.ref("orders").get();
 let allOrders = [];
@@ -93,7 +93,7 @@ app.post(
             event = stripeConfig.webhooks.constructEvent(
                 req.body,
                 sig,
-                process.env.STRIPE_WEBHOOK_SECRET
+                process.env.STRIPE_WEBHOOK_SECRET_SANDBOX
             );
         } catch (err) {
             console.error("Webhook signature verification failed:", err.message);
@@ -177,11 +177,11 @@ app.post("/buy-u-brush-pro", async (req, res) => {
             line_items: [
                 {
                     price_data: {
-                        currency: "usd",
+                        currency: "aud",
                         product_data: {
                             name: "U Brush PRO"
                         },
-                        unit_amount: Math.floor(((35 * orderData.quantity) * 1.029 + 0.30) * 100)
+                        unit_amount: Math.floor(((50 * orderData.quantity) * 1.017 + 0.30) * 100)
                     },
                     quantity: 1
                 }

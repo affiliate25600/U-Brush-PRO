@@ -66,25 +66,25 @@ export function getInvoicePdf(orderData) {
             textSize: 15
         },
         {
-            text: `${"$35"}`,
+            text: `${"$50"}`,
             xPos: 463,
             yPos: 378,
             textSize: 15
         },
         {
-            text: `$${35 * parseInt(orderData.orderQuantity)}`,
+            text: `$${50 * parseInt(orderData.orderQuantity)}`,
             xPos: 463,
             yPos: 352,
             textSize: 15
         },
         {
-            text: `$${Math.floor((35 * parseInt(orderData.orderQuantity) * 0.029 + 0.30) * 100) / 100}`,
+            text: `$${Math.floor((50 * parseInt(orderData.orderQuantity) * 0.017 + 0.30) * 100) / 100}`,
             xPos: 463,
             yPos: 325,
             textSize: 15
         },
         {
-            text: `$${Math.floor((35 * parseInt(orderData.orderQuantity) * 1.029 + 0.30) * 100) / 100}`,
+            text: `$${Math.floor((50 * parseInt(orderData.orderQuantity) * 1.017 + 0.30) * 100) / 100}`,
             xPos: 463,
             yPos: 298,
             textSize: 15
