@@ -96,6 +96,10 @@ body {
 .admin-container {
     min-height: 100dvh;
 
+    display: none;
+}
+
+.admin-container.show {
     display: flex;
 }
 
